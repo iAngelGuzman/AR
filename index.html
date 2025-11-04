@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo AR.js + A-Frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerías -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.4/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam;">
+      <!-- Marcador personalizado -->
+      <a-marker type="pattern" url="pattern-marker.patt">
+        <a-entity
+          gltf-model="/courage-the-cowardly-dog-house/source/courage_map.glb"
+          scale="0.5 0.5 0.5"
+          position="0 0 0"
+          animation-mixer>
+        </a-entity>
+      </a-marker>
+      <!-- Cámara -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
